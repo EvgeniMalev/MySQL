@@ -1,0 +1,31 @@
+CREATE DATABASE `Rivers_in_Europe`;
+
+CREATE TABLE rivers (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(30),
+    country VARCHAR(30),
+    length INT
+);
+
+CREATE TABLE bridges (
+    bridge_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(30)
+);
+
+alter table roads
+add constraint fk_roads_bridges
+foreign key roads(bridges_id)
+references bridges(id);
+
+use roads;
+INSERT INTO bridges (id, name)
+values (1, 'Stambolov most'),
+(2, 'Pokrit most'),
+(3, 'Dunav most');
+
+insert into roads (name, country, length, bridge_id) values
+('Yantra', 'Bulgaria', 286, 1),
+('Osam', 'Bulgaria', 314, 2),
+('Dunav', 'Europe', 2852, 3);
+
+select * from roads;
