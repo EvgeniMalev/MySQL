@@ -1,0 +1,27 @@
+
+CREATE DATABASE `bookstore`,
+
+CREATE TABLE bookstore
+( 
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(20) NOT NULL UNIQUE
+);
+
+
+CREATE TABLE salesman (
+   id INT PRIMARY KEY AUTO_INCREMENT,
+   first_name VARCHAR(20) NOT NULL UNIQUE,
+   middle_name VARCHAR(20) NOT NULL UNIQUE,
+   last_name VARCHAR(20) NOT NULL UNIQUE,
+   CONSTRAINT fk_salesman_bookstore
+	   FOREIGN KEY (bookstore_id)
+	      REFERENCES bookstores (id)
+);
+
+CREATE TABLE department(
+   id INT PRIMARY KEY AUTO_INCREMENT
+   content TEXT,
+   genre VARCHAR(20) NOT NULL UNIQUE
+   rating DECIMAL(10, 2) NOT NULL,
+   picture_url VARCHAR(80) NOT NULL,
+);
