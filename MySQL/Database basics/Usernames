@@ -1,0 +1,16 @@
+CREATE TABLE usernames
+(
+  id INT,
+  username VARCHAR (25) NOT NULL UNIQUE,
+  password CHAR(10) NOT NULL UNIQUE, 
+  credit INT,
+  member BOOLEAN NOT NULL,
+  CONSTRAINT pk_usernames PRIMARY KEY (id)
+);
+CREATE TABLE computer
+(
+  id INT,
+  owner VARCHAR (25) NOT NULL UNIQUE,
+  operating_system VARCHAR (25) NOT NULL,
+  CONSTRAINT pk_computer PRIMARY KEY (id)
+);
