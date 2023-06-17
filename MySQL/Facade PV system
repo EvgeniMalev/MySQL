@@ -1,0 +1,26 @@
+ 
+  CREATE DATABASE `facade pv system`;
+  
+  CREATE TABLE `pvpanel` (
+      `id` INT PRIMARY KEY UNIQUE AUTO_INCREMENT,
+      `manufacturer` VARCHAR(30) NOT NULL,
+	  `model` VARCHAR(30) NOT NULL,
+      `picture` BLOB(2) NULL,
+      `price` DECIMAL(2) NULL,
+      `date_of_production` DATE NOT NULL,
+	  `date_of_first_exploatation` DATE NOT NULL,
+      `addinfo` TEXT NULL,
+	  `nominal_voltage` INT,
+	  `nominal_power` INT,
+	  `efficiency_curve` INT,
+	  CONSTRAINT fk_op_manufacturers
+	   FOREIGN KEY (manufacturers_id)
+	      REFERENCES manufacturers(id),
+);
+
+   CREATE TABLE `manufacturers` (
+      `id` INT PRIMARY KEY UNIQUE AUTO_INCREMENT,
+      `manufacturer` VARCHAR(30) NOT NULL,
+	  `country_origin` VARCHAR(30) NOT NULL,
+	  `year_foundation` INT,
+);
