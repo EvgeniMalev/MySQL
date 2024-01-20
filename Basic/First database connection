@@ -1,0 +1,27 @@
+import java.sql.*;
+
+public class FirstDB {
+   static final String DB_URL = "jdbc:mysql://localhost/Databaseone";
+   static final String USER = "DimitarPavlov";
+   static final String PASS = "MyP@S784";
+   static final String QUERY = "SELECT id, type, model, year, engine, country, color FROM Automobiles";
+
+   public static void main(String[] args) {
+      
+      try(Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(QUERY);) {
+		 
+         while (rs.next()) {
+            System.out.print("ID: " + rs.getInt("id"));
+            System.out.print(", Year of production: " + rs.getInt("year"));
+            System.out.print(", Type of the vehicle: " + rs.getString("type"));
+            System.out.println(", The volume of the engine is: " + rs.getDouble("engine"));
+			System.out.print(", The car is produced in: " + rs.getString("country"));
+			System.out.print(", The color You choose is: " + rs.getString("color"));
+         }
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } 
+   }
+}
