@@ -1,0 +1,28 @@
+------------------Create table-------------------
+CREATE TABLE shop (
+   id INT PRIMARY KEY AUTO_INCREMENT,
+   name VARCHAR(40),
+   settlement VARCHAR(55),
+   address VARCHAR(55),
+   aresqm INT,
+   numsalesman INT,
+   amountvegetablegoods INT 
+);
+
+------------- Select simple substrings ------------
+USE shop;
+SELECT name
+FROM shop
+WHERE SUBSTRING(name, 1, 2) = 'Ka';
+
+--------- Extract a substring from something ----------
+SELECT *
+FROM shop
+WHERE amountvegetablegoods BETWEEN 20 AND 50
+ORDER BY id; -- Assuming id is the primary key of the shop table
+
+--------- Select item characteristic word -------------
+SELECT settlement
+FROM shop
+WHERE LOCATE('Polski', settlement) = 0
+ORDER BY id; -- Assuming id is the primary key of the shop table
