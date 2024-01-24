@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS `history`
+USE `history`;
+
+CREATE TABLE IF NOT EXISTS `empire` (
+  `empire_year` char(5) NOT NULL,
+  `empire_name` varchar(50) NOT NULL,
+  PRIMARY KEY (`empire_code`),
+  UNIQUE KEY `PK_Empires` (`empire_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+INSERT INTO `empire` (`empire_code`, `empire_name`) VALUES
+	('750', 'Abbasid Caliphate'),
+	('626', 'Neo-Babylonian Empire'),
+	('1603', 'British Empire'),
+	('632', 'Bulgarian Empire (Great Bulgaria)'),
+	('1915', 'Empire of China'),
+	('168', 'Dacian Empire'),
+    ('1871', 'German Empire'),
+	('1240', 'Golden Horde'),
+	('800', 'Frankish Empire');
+
+
+CREATE TABLE IF NOT EXISTS `historic capitals` (
+  `capital_name` varchar(50) NOT NULL,
+  `capital_year` char(5) NOT NULL,
+   `capital_country` varchar(50) NOT NULL,
+  PRIMARY KEY (`capital_code`),
+  UNIQUE KEY `PK_Empires` (`capital_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+INSERT INTO `capital` (`capital_name`, `capita_years`, `capital_country`) VALUES
+	('Walili', '789', 'Morocco'),
+	('Fustat', '641', 'Egypt'),
+	('Boma', '1886', 'Congo'),
+	('Gondar', '1635', 'Ethiopia'),
+	('Zomba', '1893', 'Malawi');
