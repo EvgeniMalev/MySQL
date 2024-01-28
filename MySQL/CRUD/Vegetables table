@@ -1,0 +1,43 @@
+CREATE DATABASE IF NOT EXISTS `biology`;
+USE `biology`;
+
+CREATE TABLE IF NOT EXISTS `vegetable` (
+  `vegetable_code` char(2) NOT NULL,
+  `vegetable_name` varchar(50) NOT NULL,
+  PRIMARY KEY (`vegetable_code`),
+  UNIQUE KEY `PK_Vegetables` (`vegetable_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `vegetable` (`vegetable_code`, `vegetable_name`) VALUES
+    ('C', 'Curcurbits'),
+    ('A', 'Alluims'),
+    ('L', 'Legumes'),
+    ('CR', 'Crucifers'),
+    ('AR', 'Arums'),
+    ('ZI', 'Zingiberaceae'),
+    ('MG', 'Morning-glories'),
+    ('SO', 'Solanaceae'),
+    ('UM', 'Umbellifers'),
+    ('AM', 'Amaranthaceae'),
+    ('AS', 'Asters'),
+    ('MA', 'Mallows'),
+    ('GR', 'Grasses'),
+    ('EU', 'Euphorbias');
+
+CREATE TABLE IF NOT EXISTS `plant` (
+  `plant_code` char(2) NOT NULL,
+  `plant_kingdom` varchar(45) NOT NULL,
+  `plant_clade` varchar(45) NOT NULL,
+  `plant_order` varchar(45) NOT NULL,
+  `plant_family` varchar(45) NOT NULL,
+  `plant_genus` varchar(45) NOT NULL,
+  `plant_species` varchar(45) NOT NULL,
+  PRIMARY KEY (`plant_code`),
+  UNIQUE KEY `PK_Plant` (`plant_code`),
+  CONSTRAINT `fk_plant_vegetables` FOREIGN KEY (`plant_code`) REFERENCES `vegetable` (`vegetable_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `plant` (`plant_code`, `plant_kingdom`, `plant_clade`, `plant_order`, `plant_family`, `plant_genus`, `plant_species`) VALUES
+    ('01', 'Plantae', 'Tracheophytes', 'Angiosperms', 'Solanales', 'Solanaceae', 'Solanum'), // Potato
+    ('02', 'Plantae', 'Tracheophytes', 'Angiosperms', 'Amaryllidaceae', 'Allioideae', 'Allium Sativum'), // Garlic
+    ('03', 'Plantae', 'Tracheophytes', 'Angiosperms', 'Magnoliids', 'Piperales', 'Piperaceae'); // Piper
