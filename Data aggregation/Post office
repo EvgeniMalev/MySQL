@@ -1,0 +1,50 @@
+#------1------
+USE `post office`;
+
+SELECT `department_id`, COUNT(`id`)
+FROM `employees`
+GROUP BY `department_id`
+ORDER BY `department_id`;
+#------2------
+
+SELECT `department_id`, ROUND(AVG(`salary`), 2)
+FROM `employees`
+GROUP BY `department_id`
+ORDER BY `department_id`;
+#------3------
+
+SELECT `department_id`, ROUND(MIN(`salary`), 2) AS `min_salary`
+FROM `employees`
+GROUP BY `department_id`
+HAVING `min_salary` > 880
+ORDER BY `department_id`;
+#------4------
+
+SELECT COUNT(`id`)
+FROM `letters`
+WHERE `price` > 0.5
+GROUP BY `category_id`
+HAVING `category_id` = 2;
+#------5------
+
+SELECT COUNT(`id`)
+FROM `collets`
+WHERE `price` > 2.5
+GROUP BY `category_id`
+HAVING `category_id` = 2;
+#------6------
+
+SELECT `category_id`,
+		ROUND(AVG(`price`), 2) AS `Average Price`,
+        MIN(`price`) AS `Cheapest Letters`,
+        MAX(`price`) AS `Expensive Letters`
+FROM `letters`
+GROUP BY `category_id`
+#------7------
+
+SELECT `category_id`,
+		ROUND(AVG(`price`), 2) AS `Average Price`,
+        MIN(`price`) AS `Collets from Bulgaria`,
+        MAX(`price`) AS `Collets from Europe`
+FROM `collets`
+GROUP BY `category_id`
