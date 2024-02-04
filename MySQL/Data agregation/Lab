@@ -1,0 +1,47 @@
+#------1------
+
+USE `ageofempires`;
+
+SELECT COUNT(`id`) FROM `empires_list`;
+SELECT COUNT(`id`) FROM `nation_list`;
+SELECT `nation_list` FROM `empires_list`;
+
+#------2------
+
+SELECT MAX(`amount_of_wood`) AS `stocks_wood`
+SELECT MAX(`amount_of_steel`) AS `stocks_steel`
+SELECT MAX(`amount_of_sulphur`) AS `stocks_sulphur`
+SELECT MAX(`amount_of_limestone`) AS `stocks_limestone`
+SELECT MAX(`amount_of_wool`) AS `stocks_wool`
+SELECT MAX(`amount_of_steel`) AS `stocks_steel`
+SELECT MAX(`amount_of_iron_stone`) AS `stocks_iron_stone`
+GROUP BY `priority_materials`
+FROM `raw_materials`;
+
+#------3------
+
+SELECT `country_population`, MAX(`main_ethnic_group`) AS `main_ethnics`
+FROM `country_properties`
+GROUP BY `country_population`
+ORDER BY `main_ethnics`, `country_population`;
+
+#------4------
+
+SELECT `country_population`, MAX(`main_religion_group`) AS `main_religion`
+FROM `country_properties`
+GROUP BY `country_population`
+ORDER BY `main_religion`, `country_population`;
+
+#------5------
+
+SELECT `country_population`, SUM(`total_population`) AS `total_sum`
+FROM `country_properties`
+GROUP BY `country_population`
+ORDER BY `total_sum`;
+
+#------6------	
+
+SELECT `country_properties`
+GROUP BY `country_population`
+HAVING `total_sum` < 1000000
+ORDER BY `total_sum` DESC;
