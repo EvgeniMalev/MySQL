@@ -1,5 +1,37 @@
+---------------------------- 1 ------------------------------------
 SELECT * FROM Geography
 WHERE Country = 'Pakistan' AND Continent = 'Asia';
-
+---------------------------- 2 ------------------------------------
 SELECT * FROM MOSFET drivers
 WHERE Driver = 'LSM453';
+---------------------------- 3 ------------------------------------
+SELECT e-mail, neigborhood, city 
+FROM Customers
+WHERE City = ‘Pazardzhik’;
+
+SELECT * 
+FROM Customers
+WHERE CustomerID = 1;
+---------------------------- 4 ------------------------------------
+SELECT 
+    registration_number, 
+    engine_number, 
+    frame_number,
+    battery_number,
+    production_year
+FROM
+    cars
+WHERE
+    registration_number LIKE 'BT%' AND
+    production_year = 1993;
+
+---------------------------- 5 ------------------------------------
+SELECT 
+    manufacturer, 
+    model, 
+    year 
+FROM
+    mobiletelephones
+WHERE
+    model = 'MC60' OR 
+    model = 'M55';
