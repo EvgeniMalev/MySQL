@@ -1,0 +1,5 @@
+SELECT * FROM Geography
+WHERE Country = 'Pakistan' AND Continent = 'Asia';
+
+SELECT * FROM MOSFET drivers
+WHERE Driver = 'LSM453';
