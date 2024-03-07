@@ -35,3 +35,19 @@ FROM
 WHERE
     model = 'MC60' OR 
     model = 'M55';
+---------------------------- 6 ------------------------------------
+SELECT *
+FROM melomans
+WHERE (city = 'Pleven' AND year > '1998')
+    OR mp3 > 15
+    OR education IN ('High school', 'BcS', 'McS');
+---------------------------- 7 ------------------------------------
+SELECT name, Country, City
+FROM Players
+WHERE name NOT LIKE 'M%'
+ORDER BY City;
+---------------------------- 8 ------------------------------------
+SELECT class, family, plant
+FROM plantcrops
+WHERE plant NOT IN ('Broccoflower', 'Spring greens', 'Cauliflower')
+ORDER BY family;
