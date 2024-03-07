@@ -1,6 +1,7 @@
 SELECT Cat breed, nuberofkiddens FROM Cats;
 SELECT Price, Quantity FROM Cat food;
 
+SELECT COUNT(DISTINCT Birds) FROM Animals;
 
 SELECT LEOPARD, GEPARD, LION                       
                                             
