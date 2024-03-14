@@ -1,9 +1,9 @@
-
+---------------------------------------------------------------------------------
+-- Note: entering data into a table related to city buses
+---------------------------------------------------------------------------------
 CREATE DATABASE autobus;
 
-
 USE autobus;
-
 
 CREATE TABLE bus (
     id INT NOT NULL,
