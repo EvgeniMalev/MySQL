@@ -1,4 +1,7 @@
-
+------------------------------------------------------------------------
+-- Note: example of tables related to passenger flow in the Sofia metro 
+-- and its distribution by stops
+------------------------------------------------------------------------
 CREATE DATABASE `subway_system`;
 
 CREATE TABLE `passangers` (
