@@ -1,3 +1,7 @@
+---------------------------------------------------------------
+-- Note: Logical operators in MySQL tables
+---------------------------------------------------------------
+
 SELECT * FROM Products
 WHERE Machine='Screwdriver' AND Manufacturer='Bosch';
 
