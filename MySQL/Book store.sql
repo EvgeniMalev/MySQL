@@ -1,3 +1,9 @@
+-- -----------------------------------------------------------------------
+-- Note: This is an example of a database related to a bookstore, its 
+-- booksellers, and the books they sell. In the additional tasks, we present
+--	a selection based on the seller's name and position
+-- -----------------------------------------------------------------------
+
 CREATE DATABASE `bookstore`,
 
 CREATE TABLE bookstore
