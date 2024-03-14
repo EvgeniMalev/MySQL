@@ -1,9 +1,0 @@
-------- select parameters of a cars from a list-----------
-SELECT `car_name`, `model_name`, `engine_type` FROM `cars`
-ORDER BY `car_id`
-
------------choose similar car wtih 
-SELECT `car_name`, `model_name`, `engine_type` FROM `cars`
-WHERE `hourse_power` BETWEEN 150 AND 200
-WHERE `price` BETWEEN 12000 AND 25000;
-ORDER BY `car_id`;
