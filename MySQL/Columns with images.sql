@@ -1,3 +1,6 @@
+-- -----------------------------------------------------------------------
+-- Note: Simple table with photographic file content
+-- -----------------------------------------------------------------------
 CREATE TABLE IMGTABLE (
     Foto1 VARCHAR2(4000),
     PHOTO1 BLOB,
