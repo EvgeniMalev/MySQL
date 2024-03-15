@@ -25,3 +25,9 @@ FROM Automobiles
 WHERE Manufacturer = 'Fiat'
 ORDER BY Manufacturer DESC;
 
+--------------- 6 -----------------
+
+SELECT Engine, Tyres, Maximum speed
+FROM Automobiles
+ORDER BY RAND() 
+LIMIT 3;
