@@ -1,0 +1,22 @@
+-- ---------------------------------------------------------------------------
+-- MySQL example of function that search and amphbian type of animal
+-- with weught under 150 kg and in the name to contain the letters 'ba'
+------------------------------------------------------------------------------
+
+SELECT 
+    `Apoda`, `Urodela`, `Anura`
+FROM
+    amphibians
+WHERE
+    LOWER(`name`) LIKE LOWER('ba%') AND kg > 150
+ORDER BY `amphibians_id`;
+
+
+SELECT 
+    `Urodela`
+FROM
+    amphibians
+WHERE
+    `georgaphyare_id` IN (1 , 3)
+        AND YEAR(`year of finding`) BETWEEN 1932 AND 1950
+ORDER BY `amphibians_id`;
