@@ -1,0 +1,19 @@
+CREATE PROCEDURE IF NOT EXISTS sp_get_capital(IN country VARCHAR(255), OUT capital VARCHAR(255))
+LANGUAGE SQL
+DETERMINISTIC
+SQL SECURITY INVOKER
+COMMENT 'Get capital of a country'
+BEGIN
+    SELECT capital INTO capital FROM countries WHERE country_name = country;
+END;
+
+CREATE FUNCTION IF NOT EXISTS fn_country_capital(country_name VARCHAR(255)) 
+RETURNS VARCHAR(255)
+DETERMINISTIC
+SQL SECURITY INVOKER
+COMMENT 'Get capital of a country'
+BEGIN
+    DECLARE capital_value VARCHAR(255);
+    SELECT capital INTO capital_value FROM countries WHERE country_name = country_name;
+    RETURN capital_value;
+END;
