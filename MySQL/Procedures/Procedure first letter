@@ -1,0 +1,30 @@
+----------------------------------------------------------------------------------------------
+-- MySQL example that filter the animals which are started with "a" and "ap"
+-- and an animalq which middle letter is "o"
+----------------------------------------------------------------------------------------------
+
+
+DELIMITER $$
+
+CREATE PROCEDURE first_letters(name_start TEXT)
+BEGIN
+    SELECT a.name AS 'animal_name'
+    FROM animals AS a
+    WHERE a.name LIKE CONCAT(name_start, '%')
+    ORDER BY a.name;
+END $$
+
+CREATE PROCEDURE middle_character_o()
+BEGIN
+    SELECT name AS 'animal_name'
+    FROM animals
+    WHERE LENGTH(name) > 2 AND SUBSTRING(name, CEIL(LENGTH(name) / 2), 1) = 'o'
+    ORDER BY name;
+END $$
+
+DELIMITER ;
+
+CALL first_letters('a');
+CALL first_letters('ap');
+
+DROP PROCEDURE IF EXISTS first_letters;
