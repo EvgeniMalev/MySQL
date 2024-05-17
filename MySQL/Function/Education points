@@ -1,0 +1,26 @@
+DELIMITER $$
+
+CREATE FUNCTION CustomerLevel(
+    credit DECIMAL(10,2)
+) 
+RETURNS VARCHAR(20)
+DETERMINISTIC
+BEGIN
+    DECLARE customerLevel VARCHAR(20);
+
+    IF credit > 50 THEN
+        SET customerLevel = 'Ds';
+    ELSEIF credit > 20 THEN
+        SET customerLevel = 'PhD';
+    ELSEIF credit > 10 THEN
+        SET customerLevel = 'MsC';
+    ELSEIF credit > 2 THEN
+        SET customerLevel = 'BsC';
+    ELSE
+        SET customerLevel = 'Below BsC';
+    END IF;
+
+    RETURN (customerLevel);
+END$$
+
+DELIMITER ;
