@@ -1,0 +1,8 @@
+SELECT 
+    settlements_group, 
+    SUM(population_amount) AS total_sum,
+    SUM(area_amount) AS total_sum1
+FROM
+    wizzard_deposits
+GROUP BY settlements_group
+ORDER BY total_sum;
